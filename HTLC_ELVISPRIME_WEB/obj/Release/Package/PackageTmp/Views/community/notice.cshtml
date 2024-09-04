@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "community";
+    ViewBag.Sub = "notice";
+
+    Layout = "~/Views/Shared/_subLayout.cshtml";
+
+    string setLang = "";
+    if (HttpContext.Current.Session["Language"] == null)
+    {
+        setLang = "KO";
+    }
+    else
+    {
+        setLang = HttpContext.Current.Session["Language"].ToString();
+    }
+
+    if (string.IsNullOrEmpty(setLang))
+    {
+        setLang = "KO";
+    }
+}
+
+@using PagedList.Mvc;
+@using PagedList;
+
+@model  PagedList.IPagedList<HTLC_ELVISPRIME_COM.Models.NoticeModel>
+
+@if (setLang.Equals("EN"))  //언어 설정이 영어 일 경우
+{
+
+    @section Container {
+        <script>
+            $('.lnb > li.on .depth li:nth-child(1)').addClass('on');
+        </script>
+        <script type="text/javascript" src="/Scripts/Notice.js"></script>
+        <!-- container -->
+        <div class="container">
+            <div class="contents">
+                <h3 class="subtitle"><span>Board</span></h3>
+                <!-- search_form -->
+                <div class="search_form">
+                    <div class="int_box">
+                        <input type="text" id="Input_Notice" name="stx" class="int notice_serach_input" placeholder="Please enter a search term." />
+                        <button type="button" class="btn_search" id="btn_search"><span class="hidden">Search</span></button>
+                    </div>
+                </div>
+                <!-- //search_form -->
+                <!-- board_list -->
+                <div class="board_list">
+                    <ul class="notice_list" id="notice_list">
+                    </ul>
+                    <button type="button" class="btn_more" id="Btn_NoticeMore">More</button>
+                </div>
+                <!-- //board_list -->
+            </div>
+        </div>
+        <!-- //container -->
+        <input type="hidden" id="board_lang" value="@setLang" />
+    }
+}
+else
+{
+    @section Container {
+        <script>
+            $('.lnb > li.on .depth li:nth-child(1)').addClass('on');
+        </script>
+        <script type="text/javascript" src="/Scripts/Notice.js"></script>
+        <!-- container -->
+        <div class="container">
+            <div class="contents">
+                <h3 class="subtitle"><span>공지사항</span></h3>
+                <!-- search_form -->
+                <div class="search_form">
+                    <div class="int_box">
+                        <input type="text" id="Input_Notice" name="stx" class="int notice_serach_input" placeholder="검색어를 입력하세요." />
+                        <button type="button" class="btn_search" id="btn_search"><span class="hidden">검색</span></button>
+                    </div>
+                </div>
+                <!-- //search_form -->
+                <!-- board_list -->
+                <div class="board_list">
+                    <ul class="notice_list" id="notice_list">
+                        @*<li>
+                                <a href="javascript:void(0)" class="notice_tit"><span>[공지]</span> 이 편지는 언제부터 시작됐나요?<span class="icn q">22-03-31</span></a>
+                                <div class="notice_cont">
+                                    <div class="inner">
+                                        행운의편지들
+                                    </div>
+                                    <div class="notice_file">
+                                        <ul>
+                                            <li><a><span>첨부파일 : 행운의편지.txt</span></a></li>
+                                            <li><a><span>첨부파일 : 행운의편지.png</span></a></li>
+                                            <li><a><span>첨부파일 : 행운의편지.ai</span></a></li>
+                                            <li><a><span>첨부파일 : 행운의편지.zip</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" class="notice_tit"><span>[공지]</span> CALT는 언제 오픈인가요?<span class="icn q">22-03-31</span></a>
+                                <div class="notice_cont">
+                                    <div class="inner">
+                                        저도 잘 모르겠어요!
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="no_data">
+                                <div class="no_data_tbl">
+                                    <img src="~/Images/cont/icn_nodata.png" />
+                                    <span>검색 결과가 없습니다</span>
+                                </div>
+                            </li>*@
+                    </ul>
+                    <button type="button" class="btn_more" id="Btn_NoticeMore">더보기</button>
+                </div>
+                <!-- //board_list -->
+            </div>
+        </div>
+        <!-- //container -->
+        <input type="hidden" id="board_lang" value="@setLang" />
+    }
+
+}
+

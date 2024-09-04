@@ -1,0 +1,329 @@
+﻿@{
+    ViewBag.Title = "business";
+    ViewBag.Sub = "Index";
+
+    Layout = "~/Views/Shared/_subLayout.cshtml";
+
+    string strIndex = "";
+
+    if (Request.QueryString["index"] != null)
+    {
+        strIndex = Request.QueryString["index"].ToString();
+    }
+
+    string setLang = "";
+    if (HttpContext.Current.Session["Language"] == null)
+    {
+        setLang = "KO";
+    }
+    else
+    {
+        setLang = HttpContext.Current.Session["Language"].ToString();
+    }
+
+    if (string.IsNullOrEmpty(setLang))
+    {
+        setLang = "KO";
+    }
+}
+
+@section Container {
+    @if (setLang.Equals("EN"))  //언어 설정이 영어 일 경우
+    {
+        <script>
+            $('.lnb > li.on .depth li:nth-child(1)').addClass('on');
+        </script>
+        <div class="container">
+            <!-- contents -->
+            <div class="contents">
+                <h3 class="subtitle"><span>Service</span></h3>
+            </div>
+            <!-- 여기 안에서 작업-->
+            <div class="contents">
+                <div class="business_wrap">
+                    <!-- grp -->
+                    <div class="grp item01" id="index1">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">01</p>*@
+                                <h3 class="title">FREIGHT FORWARDING</h3>
+                                <p class="business_desc">We deliver our customers' cargo safely through Konet Express' own global network anywhere in the world.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>Competitive rate & space with preferred carrier/airline strategy<br />
+                                    <span class="icn_check">check</span>Door to Door service<br />
+                                    <span class="icn_check">check</span>Sea & Air service (Air-Sea, Sea-Air)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item02" id="index2">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">02</p>*@
+                                <h3 class="title">CUSTOMS DECLARATION(CD)</h3>
+                                <p class="business_desc">Based on local logistics experience in Vietnam, we provide diverse customs clearance solution for each product.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>Consultation on importing used machinery through inspection of designated inspection company by MOIT <br />
+                                    <span class="icn_check">check</span>Management of liquidation & B.O.M for EPE<br />
+                                    <span class="icn_check">check</span>Consultation for FDI(Foreign Direct Investment) establishment and import investment equipment<br />
+                                    <span class="icn_check">check</span>Issuing for every kind of COO(Certificate of origin), FTA benefit consulting with COO
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item03" id="index3">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">03</p>*@
+                                <h3 class="title">CLSCM</h3>
+                                <p class="business_desc">We provide contract logistics (CLSCM) services that suit the condition of goods.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>VMI, BWT, Constant temp, First in-out<br />
+                                    <span class="icn_check">check</span>Cross-docking, packing, inspection<br />
+                                    <span class="icn_check">check</span>Fumigation, vacuum/waterproof packing service
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item04" id="index4">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">04</p>*@
+                                <h3 class="title">BULK PROJECT CARGO</h3>
+                                <p class="business_desc">Based on the project specialist's handling know-how, we provide integrated logistics consulting and services from preparation of documents to loading insurance, packing, LOLO(Lift on-off), cargo insurance.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>Chartering/Brocking<br />
+                                    <span class="icn_check">check</span>Break-bulk<br />
+                                    <span class="icn_check">check</span>Special cargo(OOG/Heavy lift)<br />
+                                    <span class="icn_check">check</span>Arranging special equipments (Floating Crane, SPMT, Bridge Jumer)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item05" id="index5">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">05</p>*@
+                                <h3 class="title">OVERSEAS MOVING SERVICE</h3>
+                                <p class="business_desc">Through a team of logistics professionals with years of experience in Express & P.E cargo sector, we developed optimal sea and inland transportation routes.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>Free consultancy and survey<br class="mo" /><span class="pd_rg"></span>
+                                    <span class="icn_check">check</span>Providing free packing material <br />
+                                    <span class="icn_check">check</span>Storage service – 1 month free storage<br class="mo" /><span class="pd_rg"></span>
+                                    <span class="icn_check">check</span>Documents & insurance handdling<br />
+                                    <span class="icn_check">check</span>One stop service : quotation-packing-warehousing-shipping-delivery-claim handling<br />
+                                    <span class="icn_check">check</span>Providing C2C express cargo service from Korea to Vietnam
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                </div>
+            </div>
+            <!-- //contents -->
+        </div>
+    }
+    else
+    {
+        @*<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">*@
+        <script>
+            $('.lnb > li.on .depth li:nth-child(1)').addClass('on');
+        </script>
+        <div class="container">
+            <!-- contents -->
+            <div class="contents">
+                <h3 class="subtitle"><span>사업영역</span></h3>
+            </div>
+            <!-- 여기 안에서 작업-->
+            <div class="contents">
+                <div class="business_wrap">
+                    @*<div class="business_list" id="index1">
+                            <img src="~/Images/cont/img_business01.png" />
+                            <div class="business_info">
+                                <div class="business_tbcell">
+                                    <h4 class="business_title"><span class="business_num">01</span>Freight forwarding</h4>
+                                    <p>전 세계 어느 지역이든 KONET EXPRESS만의 Global network를 통하여 고객의 화물을 안전하게 운송하고 있습니다.</p>
+                                    <p class="business_desc">우선 순위 선사/항공사 선점 전략으로 경쟁력 있는 가격과 스페이스 확보</p>
+                                    <p class="business_desc">Door to Door 운송 구축</p>
+                                    <p class="business_desc">Sea & Air service (항공-해상, 해상-항공 연계 서비스)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="business_list" id="index2">
+                            <img src="~/Images/cont/img_business02.png" />
+                            <div class="business_info">
+                                <div class="business_tbcell">
+                                    <h4 class="business_title"><span class="business_num">02</span>수출입 통관 대행</h4>
+                                    <p>수년간의 베트남 현지 물류 경험을 바탕으로 상품별 다양한 통관 서비스를 제공합니다.</p>
+                                    <p class="business_desc">MOIT 지정 검사 기관을 통한 중고/신설비 수입 컨설팅</p>
+                                    <p class="business_desc">EPE/임가공수출 기업에 대한 Liquidation 관리 및 BOM 컨설팅</p>
+                                    <p class="business_desc">외국투자기업(FDI) 설립 및 투자설비 수입 컨설팅</p>
+                                    <p class="business_desc">각종 원산지증명서(Certificate of Origin) 발급 대행 및 FTA 관세 혜택 컨설팅</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="business_list" id="index3">
+                            <img src="~/Images/cont/img_business03.png" />
+                            <div class="business_info">
+                                <div class="business_tbcell">
+                                    <h4 class="business_title"><span class="business_num">03</span>계약물류(CLSCM)</h4>
+                                    <p>화물 특성에 맞는 맞춤형 계약물류(CLSCM) 서비스를 제공합니다.</p>
+                                    <p class="business_desc">VMI, BWT, 항온/항습, 선입선출 서비스</p>
+                                    <p class="business_desc">화물 집하, 분류, 포장 검사</p>
+                                    <p class="business_desc">방역, 방수, 방염, 진공, 질소 포장, 신소재 방청 포장 등</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="business_list" id="index4">
+                            <img src="~/Images/cont/img_business04.png" />
+                            <div class="business_info">
+                                <div class="business_tbcell">
+                                    <h4 class="business_title"><span class="business_num">04</span>프로젝트 화물 운송</h4>
+                                    <p>프로젝트 전문가의 화물 취급 Know-how를 바탕으로 서류 준비, 적하보험, 수출포장, 하역, 화물 수하인에 최종 배송까지의 통합 물류 컨설팅 및 서비스를 제공합니다.</p>
+                                    <p class="business_desc">Chartering/Brocking</p>
+                                    <p class="business_desc">Break-bulk</p>
+                                    <p class="business_desc">Special cargo(OOG/Heavy lift)</p>
+                                    <p class="business_desc">특수장비 준비(Floating Crane, SPMT, Bridge Jumer)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="business_list" id="index5">
+                            <img src="~/Images/cont/img_business05.png" />
+                            <div class="business_info">
+                                <div class="business_tbcell">
+                                    <h4 class="business_title"><span class="business_num">05</span>해외 이주 사업</h4>
+                                    <p>다년간의 운송경험을 가진 이주화물 전문인들로 구성된 업무팀을 통해 희망배송일에 맞춘 최적의 해상 및 내륙운송 경로를 개발, 신속 정확한 배송을 약속합니다.</p>
+                                    <p class="business_desc">무상 방문 견적</p>
+                                    <p class="business_desc">무상 포장재 제공</p>
+                                    <p class="business_desc">분실 방지 시스템 운영<span>한국/베트남 장기 보관 서비스</span></p>
+                                    <p class="business_desc">화물 보험 대행</p>
+                                    <p class="business_desc">One stop service 제공 : 방문견적-포장-창고입고-운송-현지배송-보험</p>
+                                    <p class="business_desc">한국-베트남 C2C 해상 특송 서비스 제공</p>
+                                </div>
+                            </div>
+                        </div>*@
+                    <!-- grp -->
+                    <div class="grp item01" id="index1">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">01</p>*@
+                                <h3 class="title">Freight forwarding</h3>
+                                <p class="business_desc">전 세계 어느 지역이든 KONET EXPRESS만의 Global network를 통하여 고객의 화물을 안전하게 운송하고 있습니다.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>우선 순위 선사/항공사 선점 전략으로 경쟁력 있는 가격과 스페이스 확보<br />
+                                    <span class="icn_check">check</span>Door to Door 운송 구축<br />
+                                    <span class="icn_check">check</span>Sea & Air service (항공-해상, 해상-항공 연계 서비스)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item02" id="index2">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">02</p>*@
+                                <h3 class="title">수출입 통관 대행</h3>
+                                <p class="business_desc">수년간의 베트남 현지 물류 경험을 바탕으로 상품별 다양한 통관 서비스를 제공합니다.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>MOIT 지정 검사 기관을 통한 중고/신설비 수입 컨설팅<br />
+                                    <span class="icn_check">check</span>EPE/임가공수출 기업에 대한 Liquidation 관리 및 BOM 컨설팅<br />
+                                    <span class="icn_check">check</span>외국투자기업(FDI) 설립 및 투자설비 수입 컨설팅<br />
+                                    <span class="icn_check">check</span>각종 원산지증명서(Certificate of Origin) 발급 대행 및 FTA 관세 혜택 컨설팅
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item03" id="index3">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">03</p>*@
+                                <h3 class="title">계약물류(CLSCM)</h3>
+                                <p class="business_desc">화물 특성에 맞는 맞춤형 계약물류(CLSCM) 서비스를 제공합니다.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>VMI, BWT, 항온/항습, 선입선출 서비스<br />
+                                    <span class="icn_check">check</span>화물 집하, 분류, 포장 검사<br />
+                                    <span class="icn_check">check</span>방역, 방수, 방염, 진공, 질소 포장, 신소재 방청 포장 등
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item04" id="index4">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">04</p>*@
+                                <h3 class="title">프로젝트 화물 운송</h3>
+                                <p class="business_desc">프로젝트 전문가의 화물 취급 Know-how를 바탕으로 서류 준비, 적하보험, 수출포장, 하역, 화물 수하인에 최종 배송까지의 통합 물류 컨설팅 및 서비스를 제공합니다.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>Chartering/Brocking<br />
+                                    <span class="icn_check">check</span>Break-bulk<br />
+                                    <span class="icn_check">check</span>Special cargo(OOG/Heavy lift)<br />
+                                    <span class="icn_check">check</span>특수장비 준비(Floating Crane, SPMT, Bridge Jumer)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                    <!-- grp -->
+                    <div class="grp item05" id="index5">
+                        <div class="tbl_area">
+                        </div>
+                        <div class="text_area">
+                            <div class="text_tableCell">
+                                @*<p class="business_num">05</p>*@
+                                <h3 class="title">해외 이주 화물 운송</h3>
+                                <p class="business_desc">다년간의 운송경험을 가진 이주화물 전문인들로 구성된 업무팀을 통해 희망배송일에 맞춘 최적의 해상 및 내륙운송 경로를 개발, 신속 정확한 배송을 약속합니다.</p>
+                                <p class="text">
+                                    <span class="icn_check">check</span>무상 방문 견적, 무상 포장재 제공<br class="mo" /><span class="pd_rg"></span>
+                                    <span class="icn_check">check</span>분실 방지 시스템 운영<br />
+                                    <span class="icn_check">check</span>한국/베트남 장기 보관 서비스<br class="mo" /><span class="pd_rg"></span>
+                                    <span class="icn_check">check</span>화물 보험 대행<br />
+                                    <span class="icn_check">check</span>One stop service 제공 : 방문견적-포장-창고입고-운송-현지배송-보험<br />
+                                    <span class="icn_check">check</span>한국-베트남 C2C 해상 특송 서비스 제공
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //grp -->
+                </div>
+            </div>
+            <!-- //contents -->
+        </div>
+
+    }
+    @if (strIndex != "")
+    {
+        <input type="hidden" name="Business_index" value="@strIndex" />
+    }
+    @Scripts.Render("~/Scripts/js/Business/Business.js")
+}

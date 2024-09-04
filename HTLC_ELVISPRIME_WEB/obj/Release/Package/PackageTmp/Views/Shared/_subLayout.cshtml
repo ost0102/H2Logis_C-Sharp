@@ -1,0 +1,427 @@
+﻿@{ // Main 언어 설정
+	string setLang = "";
+	if (HttpContext.Current.Session["Language"] == null)
+	{
+		setLang = "KO";
+	}
+	else
+	{
+		setLang = HttpContext.Current.Session["Language"].ToString();
+	}
+
+	if (string.IsNullOrEmpty(setLang))
+	{
+		setLang = "KO";
+	}
+}
+
+<!DOCTYPE html>
+@if (setLang.Equals("EN"))  //언어 설정이 영어 일 경우
+{
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>H2 LOGISTICS</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="H2 LOGISTICS"" />
+    <meta property="og:image" content="Images/meta_img01" />
+    <meta property="og:site_name" content="H2 LOGISTICS" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <link href="~/Content/css/media.css" rel="stylesheet">
+    <link href="~/Content/PagedList.css" rel="stylesheet">
+    <link href="~/Content/loading.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/API/c3.css">
+    <script src="~/Scripts/js/jquery-2.2.3.min.js"></script>
+    <script src="~/Scripts/js/slick.min.js"></script>
+    <script src="~/Scripts/js/waypoints.min.js"></script>
+    <script src="~/Scripts/js/common.js"></script>
+    <script src="~/Scripts/js/Common/Comm.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    @*<script src="~/Scripts/API/c3.min.js"></script>*@
+    <script src="~/Scripts/API/c3.js"></script>
+    <script src="~/Scripts/API/bluebird.min.js"></script>
+</head>
+<body>
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header id="header" class="header">
+            <div class="fixed_in type2">
+                <div class="top_row">
+                    <h1 class="logo"><a href="/"></a></h1>
+                    <div class="search_top">
+                        <input type="text" id="Pc_Input_Tracking" name="" value="" placeholder="B/L No, Container No">
+                        <span class="focus-border"></span>
+                        <button type="button" class="btn_search" id="Pc_btn_Tracking"><span class="blind">검색</span></button>
+                    </div>
+                    <button type="button" id="hamberger" class="mo"><span class="btn_total"></span></button>
+                    <nav class="total_menu">
+                        <div class="login_info">
+                            <div class="info_line not_login">
+                                <span class="user_greeting">안녕하세요, <strong id="UserName">Guest</strong>님</span>
+                                <button type="button" class="login" onclick="layerPopup2('#login_pop')">Login</button>
+                            </div>
+                        </div>
+                        <div class="search_top side">
+                            <input type="text" id="Mo_Input_Tracking" name="" value="" placeholder="">
+                            <button type="button" class="btn_search" name="Mo_btn_Tracking"><span class="blind">검색</span></button>
+                        </div>
+                        <ul class="lnb">
+
+                            <li class="company">
+                                <div class="nav-dot1"></div>
+                                <a href="Company/greeting" class="showdot1"><span class="red1">About Us</span></a>
+                                <div class="sub_depth" style="">
+                                    <ul>
+                                        <li><a href="../Company/Index#greetings"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>Greetings</span></a></li>
+                                        <li><a href="../Company/Index#history"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>History</span></a></li>
+                                        <li><a href="../Company/Index#business"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>Business</span></a></li>
+                                        <li><a href="../Company/Index#location"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>Location</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="schMgt">
+                                <div class="nav-dot2"></div>
+                                <a href="javascript:void(0)" class="showdot2"><span class="red2">Schedule</span></a>
+                                <div class="sub_depth" style="">
+                                    <ul>
+                                        <li onclick="fnShowLoginLayer('/Schedule/Sea')"><a href="javascript:void(0)"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>Sea Schedule</span></a></li>
+                                        <li onclick="fnShowLoginLayer('/Schedule/Air')"><a href="javascript:void(0)"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>Air Schedule</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="docMgt">
+                                <div class="nav-dot3"></div>
+                                <a href="javascript:void(0)" class="showdot3"><span class="red3">Document</span></a>
+                                <div class="sub_depth" style="">
+                                    <ul>
+                                        <li onclick="fnShowLoginLayer('/Document/BL')"><a href="javascript:void(0)"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>B/L</span></a></li>
+                                        <li onclick="fnShowLoginLayer('/Document/Invoice')"><a href="javascript:void(0)"><span class="mo_icn_check"><span class="mo">·&nbsp;</span>INVOICE</span></a></li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </ul>
+                        <button class="btn_menu_close"></button>
+                    </nav>
+                    @*<ul class="lnb">
+                    <li>
+                        <div class="nav-dot1"></div>
+                        <a href="@Url.Action("greeting", "Company")" class="showdot1"><span class="red1">About Us</span></a><br />
+                        <span class="sub-title">회사소개</span>
+                        <div class="depth">
+                            <div class="sub_in">
+                                <ul>
+                                    <li><a href="@Url.Action("greeting", "Company")"><span>인사말</span></a></li>
+                                    <li><a href="@Url.Action("history", "Company")"><span>개요 및 연혁</span></a></li>
+                                    <li><a href="@Url.Action("map", "Company")"><span>오시는 길</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-dot2"></div>
+                        <a href="@Url.Action("Index", "business")" class="showdot2"><span class="red2">Logistics Info</span></a><br />
+                        <span class="sub-title">물류도구</span>
+                        <div class="depth">
+                            <div class="sub_in">
+                                <ul>
+                                    <li><a href="@Url.Action("Index", "business")"><span>사업영역</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="nav-dot3"></div>
+                        <a href="@Url.Action("notice", "community")" class="showdot3"><span class="red3">E-Commerce</span></a><br />
+                        <span class="sub-title">E-Commerce</span>
+                        <div class="depth" style="margin-left:3px;">
+                            <div class="sub_in">
+                                <ul>
+                                    <li><a href="@Url.Action("notice", "community")"><span>공지사항</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>*@
+                </div>
+
+            </div>
+        </header>
+        <!-- //header -->
+        <!-- container -->
+        @RenderSection("container", required: false)
+        <!-- //container -->
+        <script>
+            var sub_id = $("#sub_id").val();
+            //alert(sub_id);
+            switch (sub_id) {
+                case "company":
+                    lock(0, 0);
+                    break;
+                case "business":
+                    lock(1, 0);
+                    break;
+                case "community":
+                    lock(2, 0);
+                    break;
+            }
+        </script>
+
+        <!-- sub_visual -->
+        
+
+        <!-- //sub_visual -->
+        <!-- location -->
+        
+        <footer id="footer">
+            <div class="inner">
+                <address class="addr">
+                    <img src="~/Images/logo_ft.png" />
+                    <p>부산광역시 해운대구 센텀2로 25 센텀드림월드 1301호 | TEL +82-51-744-9155 | FAX +02-51-744-9160</p>
+                    <p>Copyrightⓒ 2023 H2LOGISTICS. ALL RIGHTS RESERVED</p>
+                </address>
+                <div class="certification">
+                    <img src="~/Images/kiffa.png" />
+                    <img src="~/Images/aeo.png" />
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+}
+else
+{
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>KONET EXPRESS</title>
+	<link href="~/Content/css/media.css" rel="stylesheet">
+	<link href="~/Content/PagedList.css" rel="stylesheet">
+	<link href="~/Content/loading.css" rel="stylesheet">
+	<link rel="stylesheet" href="~/Content/API/c3.css">
+	<script src="~/Scripts/js/jquery-2.2.3.min.js"></script>
+	<script src="~/Scripts/js/slick.min.js"></script>
+	<script src="~/Scripts/js/waypoints.min.js"></script>
+	<script src="~/Scripts/js/common.js"></script>
+	<script src="~/Scripts/js/Common/Comm.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	@*<script src="~/Scripts/API/c3.min.js"></script>*@
+	<script src="~/Scripts/API/c3.js"></script>
+	<script src="~/Scripts/API/bluebird.min.js"></script>
+</head>
+<body>
+	<!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <header id="header">
+            <div id="navi_bg"></div>
+            <div class="header_cover">
+                <div class="inner">
+                    <h1 class="logo"><a href="/"></a></h1>
+                    <div class="search_top">
+                        <input type="text" id="Pc_Input_Tracking" name="" value="" placeholder="B/L No, Container No">
+                        <span class="focus-border"></span>
+                        <button type="button" class="btn_search" id="Pc_btn_Tracking"><span class="blind">검색</span></button>
+                    </div>
+                    <ul class="lnb">
+                        <li>
+                            <div class="nav-dot1"></div>
+                            <a href="@Url.Action("greeting", "Company")" class="showdot1"><span class="red1">About Us</span></a><br />
+                            <span class="sub-title">회사소개</span>
+                            <div class="depth">
+                                <div class="sub_in">
+                                    <ul>
+                                        <li><a href="@Url.Action("greeting", "Company")"><span>인사말</span></a></li>
+                                        <li><a href="@Url.Action("history", "Company")"><span>개요 및 연혁</span></a></li>
+                                        <li><a href="@Url.Action("map", "Company")"><span>오시는 길</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-dot2"></div>
+                            <a href="@Url.Action("Index", "business")" class="showdot2"><span class="red2">Logistics Info</span></a><br />
+                            <span class="sub-title">물류도구</span>
+                            <div class="depth">
+                                <div class="sub_in">
+                                    <ul>
+                                        <li><a href="@Url.Action("Index", "business")"><span>사업영역</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-dot3"></div>
+                            <a href="@Url.Action("notice", "community")" class="showdot3"><span class="red3">E-Commerce</span></a><br />
+                            <span class="sub-title">E-Commerce</span>
+                            <div class="depth">
+                                <div class="sub_in">
+                                    <ul>
+                                        <li><a href="@Url.Action("notice", "community")"><span>공지사항</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#total_nav" id="hamberger" class="mo"><span class="btn_total"></span></a>
+                    @*<div class="lang_box pc">
+                    <button class="btn_lang">KOR</button>
+                    <ul>
+                        <li><a href="@Url.Action("SetLang", "Language", new { Controller = "Language", strLang = "EN" })">ENG</a></li>
+                    </ul>
+                </div>*@
+                    <!-- total_menu -->
+                    <!-- //total_menu -->
+                </div>
+
+            </div>
+            <nav class="total_menu">
+                <div class="login_info">
+                    <div class="info_line not_login">
+                        <span class="user_greeting">안녕하세요, <strong id="UserName">Guest</strong>님</span>
+                        <button type="button" class="login" onclick="layerPopup2('#login_pop')">Login</button>
+                    </div>
+                </div>
+                <div class="search_top side">
+                    <input type="text" id="Mo_Input_Tracking" name="" value="" placeholder="">
+                    <button type="button" class="btn_search" name="Mo_btn_Tracking"><span class="blind">검색</span></button>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <a href="@Url.Action("greeting", "Company")"><span>COMPANY</span></a>
+                        <div class="sub_depth">
+                            <div class="sub_in">
+                                <ul>
+                                    <li><a href="@Url.Action("greeting", "Company")"><span>CEO GREETINGS</span></a></li>
+                                    <li><a href="@Url.Action("history", "Company")"><span>HISTORY</span></a></li>
+                                    <li><a href="@Url.Action("map", "Company")"><span>LOCATION</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("SeaInout", "business")"><span>SERVICE</span></a>
+                        <div class="sub_depth">
+                            <div class="sub_in">
+                                <ul>
+                                    <li><a href="@Url.Action("Index", "business")"><span>SERVICE</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("notice", "community")"><span>BOARD</span></a>
+                        <div class="sub_depth">
+                            <div class="sub_in">
+                                <ul>
+                                    <li><a href="@Url.Action("notice", "community")"><span>BOARD</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=@Url.Action("SetLang", "Language", new { Controller = "Language", strLang = "KO" })><span>KOR</span></a>
+                    </li>
+                </ul>
+                <button class="btn_menu_close"></button>
+            </nav>
+        </header>
+        <!-- //header -->
+        <script>
+            var sub_id = $("#sub_id").val();
+            //alert(sub_id);
+            switch (sub_id) {
+                case "company":
+                    lock(0, 0);
+                    break;
+                case "business":
+                    lock(1, 0);
+                    break;
+                case "community":
+                    lock(2, 0);
+                    break;
+            }
+            $('.showdot1').hover(function () {
+                $('.nav-dot1').css('display', 'block');
+                $('.red1').css('color', '#d70c19');
+                $('.red1').css('font-weight', '600');
+            }, function () {
+                $('.nav-dot1').css('display', 'none');
+                $('.red1').css('color', '#000');
+                $('.red1').css('font-weight', '500');
+            });
+
+            $('.showdot2').hover(function () {
+                $('.nav-dot2').css('display', 'block');
+                $('.red2').css('color', '#d70c19');
+                $('.red2').css('font-weight', '600');
+            }, function () {
+                $('.nav-dot2').css('display', 'none');
+                $('.red2').css('color', '#000');
+                $('.red2').css('font-weight', '500');
+            });
+
+            $('.showdot3').hover(function () {
+                $('.nav-dot3').css('display', 'block');
+                $('.red3').css('color', '#d70c19');
+                $('.red3').css('font-weight', '600');
+            }, function () {
+                $('.nav-dot3').css('display', 'none');
+                $('.red3').css('color', '#000');
+                $('.red3').css('font-weight', '500');
+            });
+        </script>
+
+        <!-- sub_visual -->
+        
+        <!-- //location -->
+        <!-- container -->
+        @RenderSection("container", required: false)
+        <!-- //container -->
+
+
+        <footer id="footer">
+            <div class="inner">
+                <address class="addr">
+                    <img src="~/Images/logo_ft.png" />
+                    <p>부산광역시 해운대구 센텀2로 25 센텀드림월드 1301호 | TEL +82-51-744-9155 | FAX +02-51-744-9160</p>
+                    <p>Copyrightⓒ 2023 H2LOGISTICS. ALL RIGHTS RESERVED</p>
+                </address>
+                <div class="certification">
+                    <img src="~/Images/kiffa.png" />
+                    <img src="~/Images/aeo.png" />
+                </div>
+            </div>
+        </footer>
+
+        <!-- loading -->
+        <div class="loading" id="ProgressBar_Loading" style="display:none">
+            <div class="ispinner ispinner-large">
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+                <div class="ispinner-blade"></div>
+            </div>
+        </div>
+        <!-- //loading -->
+    </div>
+</body>
+</html>
+}
+
+

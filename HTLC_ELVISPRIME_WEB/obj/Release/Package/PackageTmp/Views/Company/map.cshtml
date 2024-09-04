@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "company";
+    ViewBag.Sub = "map";
+    Layout = "~/Views/Shared/_subLayout.cshtml";
+}
+
+@section Container {
+        <script>
+            $('.lnb > li.on .depth li:nth-child(3)').addClass('on');
+        </script>
+        <!-- container -->
+        <div class="container">
+            <!-- contents -->
+            <div class="contents">
+                <h3 class="subtitle"><span>오시는 길</span></h3>
+                <!-- tab -->
+                <div class="tab01">
+                    <ul id="tab" class="tab pc1024">
+                        <li class="on">
+                            <a href="javascript:void(0)">Ha Noi head Office</a>
+                            <p>17th FL., 106 Hoang Quoc Viet, Nghia Do, Cau Giay, Ha Noi</p>
+                            <p><span>Tel. (84 24) 3787 6265</span><span>Fax. (84 24) 3787 6184</span></p>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Hai Phong branch</a>
+                            <p>Rm 504, 5th Fl., Thanh  Dat 1 Bldg., No.3 Le Thanh Tong, May To ward, Ngo Quyen Dist., Hai Phong</p>
+                            <p><span>Tel. (84 22) 5361 4558</span><span>Fax. (84 22) 5361 4559</span></p>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Noibai Airport Office</a>
+                            <p>P306, NTS building, Noi Bai international airport, Phu Cuong, Soc son, Hanoi</p>
+                            <p><span>Tel. (84 22) 3581 5666</span><span>Fax. (84 22) 3787 6184</span></p>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Bac Ninh Office</a>
+                            <p>Sao Bac Bldg, Lot A3, Phuong Lieu commune, Que Vo dist, Bac Ninh province</p>
+                            <p><span>Tel. (84 24) 3787 6265</span><span>Fax. (84 24) 3787 6184</span></p>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Ho Chi Minh branch</a>
+                            <p>4th FL, Dinh Le BLDG, No. 01 Dinh Le St., Ward 13, District 4, HCMC</p>
+                            <p><span>Tel. (84 28) 3826 8089</span><span>Fax. (84 28) 3826 8018</span></p>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Binh Duong Office</a>
+                            <p>Đường An Phú 13, KP1B, P, Thuận An, Bình Dương</p>
+                            <p><span>Tel. (84 28) 3826 8089</span><span>Fax. (84 28) 3826 8018</span></p>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Konet Express Korea co.,Ltd.</a>
+                            <p>Rm1210, Magok Central tower II, 158 Magokseo-ro, Gangseo-gu, Seoul, Korea 07788</p>
+                            <p><span>Tel. (82 2) 2135 1784</span><span>Fax. (82 2) 2135 1787</span></p>
+                        </li>
+                    </ul>
+                    <div class="tab_mo mo1024">
+                        <select class="select" id="tab02">
+                            <option>Ha Noi head Office</option>
+                            <option>Hai Phong branch</option>
+                            <option>Noibai Airport Office</option>
+                            <option>Bac Ninh Office</option>
+                            <option>Ho Chi Minh branch</option>
+                            <option>Binh Duong Office</option>
+                            <option>Konet Express Korea co.,Ltd.</option>
+                        </select>
+                    </div>
+                    <div class="map_w">
+                        <div class="tab_panel">
+                            <div class="panel" style="display:block;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.6309442582783!2d105.79229461538547!3d21.04744789251501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3aad69ecdb%3A0xe886740e57b9af82!2zMTA2IEhvw6BuZyBRdeG7kWMgVmnhu4d0LCBD4buVIE5odeG6vywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIOuyoO2KuOuCqA!5e0!3m2!1sko!2skr!4v1648624291621!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="panel">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3728.1265057951814!2d106.69116001538379!3d20.866950648657326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314a7aef41ef07c9%3A0xf810c4da6afc5ba7!2zVMOyYSBOaMOgIFRow6BuaCDEkOG6oXQgMQ!5e0!3m2!1sko!2skr!4v1648712547474!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="panel">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.5143922781776!2d105.80369901744383!3d21.211441399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135023d7e961545%3A0x92e6541b0ed038bc!2sNTS%20Building!5e0!3m2!1sko!2skr!4v1648712616117!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="panel">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14882.41341006478!2d106.11367518684463!3d21.168177784647483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31350c82c9f706f1%3A0x3a89ff72c957c352!2zUGjGsMahbmcgTGnhu4V1LCBRdeG6vyBWw7UgRGlzdHJpY3QsIOuwleuLjCDrsqDtirjrgqg!5e0!3m2!1sko!2skr!4v1648712791862!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="panel">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.618103865836!2d106.7032789153162!3d10.763887212367061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f6bd6dce3bb%3A0x290b2e805303c998!2zxJBpbmggTOG7hQ!5e0!3m2!1sko!2skr!4v1648713008976!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="panel">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.06272847588!2d106.7348606153169!3d10.958634308799363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d9f02b95a789%3A0x27fcfcfbe520dede!2zS2h1IGTDom4gY8awIGFuIHBow7ogaMawbmc!5e0!3m2!1sko!2skr!4v1648713164276!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <div class="panel">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.148045636439!2d126.82722981563377!3d37.57513143139295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9b80b935e9a5%3A0xd2d640fe54fa7301!2z7ISc7Jq47Yq567OE7IucIOqwleyEnOq1rCDrp4jqs6Hrj5kgMTU4!5e0!3m2!1sko!2skr!4v1648713720404!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //tab -->
+            </div>
+            <!-- //contents -->
+        </div>
+        <!-- //container -->

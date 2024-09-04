@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Main";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Container {
+    <!-- container -->
+    <section class="container" id="container">
+        <div class="sub_visual">
+            <div class="inner">
+                <h4 class="subtitle">수출이행내역</h4>
+            </div>
+        </div>
+        <!-- tab_panel -->
+        <div class="tab_panel">
+            <!-- panel - 해운 스케줄 조회-->
+            <!-- panel - 수출이행내역 -->
+            <div class="panel" id="exportUnipass">
+                <div class="fixed_in type2">
+                    <div class="unipass_area">
+                        <div class="search_bar">
+                            <div class="col w1 first">
+                                <input type="radio" name="export" id="export01" value="OUTBOUND" checked="checked" />
+                                <label for="export01" class="switch_label">수출신고번호</label>
+                            </div>
+                            <div class="col w1 last">
+                                <input type="radio" name="export" id="export02" value="BL" />
+                                <label for="export02" class="switch_label">B/L</label>
+                            </div>
+                            <div class="col w3">
+                                <!-- grid_fluid -->
+                                <div class="grid_fluid type1" name="UniPass_Export_Box">
+                                    <div class="grid_col">
+                                        <div class="grid_col">
+                                            <div class="int_box border-animation">
+                                                <input type="text" id="input_UniOBnum" value="" placeholder="수출신고번호를 입력하세요." class="inputExportReportNum border-animation__inner" data-index="Main_UniOBnum" maxlength="30">
+                                                <button type="button" class="btns icon delete" style="display: none;"><span class="blind">삭제</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid_fluid type1" name="UniPass_Export_Box" style="display:none;">
+                                    <div class="grid_col">
+                                        <div class="grid_col">
+                                            <div class="int_box border-animation">
+                                                <input type="text" id="input_UniOBbl" value="" placeholder="B/L 번호를 입력하세요." class="inputBLNum border-animation__inner" data-index="Main_UniOBbl">
+                                                <button type="button" class="btns icon delete" style="display: none;"><span class="blind">삭제</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //grid_fluid -->
+                            </div>
+                            <div class="col w2">
+                                <div class="grid_col">
+                                    <button type="submit" class="btn_type1 search" id="btn_Outbound_Search" @*onclick="fnMovePageUnipass('exportUnipass')"*@><span class="noneblind">Search</span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 수출이행내역 조회 결과 -->
+                        <div id="div_UniCargoList">
+                            <div class="unipass_output" id="div_UniOB_NumArea">
+                                <div class="unipass_table type1" id="div_UniOB_NumFirst">
+                                </div>
+                                <div class="cnt_box">
+                                    <span class="cnt" id="span_UniOB_NumCount">전체 <em>1</em>건</span>
+                                </div>
+                                <div class="unipass_table type3 no_head center" id="div_UniOB_NumSecond">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="unipass_output" id="div_UniOB_BLArea" style="display:none">
+                            <div class="cnt_box">
+                                <span class="cnt" id="span_UniOB_BlCount">전체 <em>1</em>건</span>
+                            </div>
+                            <div class="unipass_table type1 center" id="div_UniOB_BlFirst">
+                                
+                            </div>
+                        </div>
+                        <div class="no_data" id="UniOB_no_data">@*<span>원하시는 <strong>정보를 검색해보세요.</strong></span>*@</div>
+                    </div>
+                </div>
+            </div>
+            <!-- //panel -->
+        </div>
+    </section>
+    <!-- //tab_panel -->
+    <!-- //container -->
+    @Scripts.Render("~/Scripts/js/LogisticsTools/Unipass.js")
+}

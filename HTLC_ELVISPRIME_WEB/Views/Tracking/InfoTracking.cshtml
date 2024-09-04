@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "InfoTracking";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Container {
+    <div class="container">
+        <div class="sub_visual" id="Schedule">
+            <div class="inner">
+                <h4 class="subtitle" id="Booking_Title">정보 추적</h4>
+            </div>
+        </div>
+        <div class="sub_cover" id="SubCover">
+            <div class="search_zone layout2 tracking_page">
+                <div class="inner">
+                    <div class="col">
+                        <em class="label cr1">B/L No :</em>
+                        <div class="int_box cr1">
+                            <input type="text" name="" value="" placeholder="" id="S_HBL_NO" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <em class="label cr2">CNTR No :</em>
+                        <div class="int_box cr2">
+                            <input type="text" name="" value="" placeholder="" id="S_CNTR_NO" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btns type7 icn_search" id="btnSearch"><span class="icn_search"></span></button>
+                </div>
+            </div>
+            <!-- //search_zone -->
+            <!-- tracking_area -->
+            <div class="tracking_area tracking_page">
+                <!-- 배경지도 영역 추가하기-->
+                <div id="layermap" class="layermap"></div>
+                <!-- delivery_status -->
+                <div class="delivery_status" style="display:none;">
+                    <div class="top_box">
+                        <button type="button" class="btn_close">CLOSE</button>
+                        <!-- cargo_info -->
+                        <div class="cargo_info">
+                            <div class="col">
+                                <em class="tit">Master B/L No :</em>
+                                <p id="MBL_NO"></p>
+                            </div>
+                            <div class="col">
+                                <em class="tit">House B/L No :</em>
+                                <p id="HBL_NO"></p>
+                            </div>
+                        </div>
+                        <!-- //cargo_info -->
+                    </div>
+                    <div class="shipping_step">
+                        <div class="scrollbar-outer">
+                            <ul id="TrackList">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //delivery_status -->
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/Scripts/js/Tracking/Tracking.js")
+}

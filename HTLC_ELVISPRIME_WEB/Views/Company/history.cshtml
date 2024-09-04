@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "company";
+    ViewBag.Sub = "history";
+
+    Layout = "~/Views/Shared/_subLayout.cshtml";
+
+}
+
+@section Container {
+        <script>
+            $('.lnb > li.on .depth li:nth-child(2)').addClass('on');
+        </script>
+        <style>
+            /* 마지막 막대의 색깔만 변경 */
+            .c3-shapes path:last-child {
+                fill: black !important;
+                stroke: black !important
+            }
+        </style>
+
+        <!-- container -->
+        <div class="container">
+            <div class="contents">
+                <h3 class="subtitle"><span>개요 및 연혁</span></h3>
+                <div class="history">
+                    <div class="history_sub">
+                        <div class="history_tbl">
+                            <div class="history_flex">
+                                <div class="history_tbl02">
+                                    <img src="~/Images/icn_history01.png" />
+                                    <p class="title">회사명</p>
+                                </div>
+                                <div class="history_tbl02">
+                                    <p class="history_cell">KONET EXPRESS CO.,LTD.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history_tbl">
+                            <div class="history_flex">
+                                <div class="history_tbl02">
+                                    <img src="~/Images/icn_history02.png" />
+                                    <p class="title">지점 현황</p>
+                                </div>
+                                <div class="history_tbl02">
+                                    <p class="history_cell">하노이 본사 외 3개 지점,<br />3개 사무소 운영</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history_tbl">
+                            <div class="history_flex">
+                                <div class="history_tbl02">
+                                    <img src="~/Images/icn_history03.png" />
+                                    <p class="title">근무인원</p>
+                                </div>
+                                <div class="history_tbl02">
+                                    <p class="history_cell">102명</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history_tbl">
+                            <div class="history_flex">
+                                <div class="history_tbl02">
+                                    <img src="~/Images/icn_history04.png" />
+                                    <p class="title">주요사업</p>
+                                </div>
+                                <div class="history_tbl02">
+                                    <p class="history_cell">Freight forwarding<br />수출입통관<br />내륙운송<br />계약물류<br />프로젝트 화물 운송<br />해외 이주 화물 운송</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="history_main">
+                            <div class="history_cell">
+                                <ul class="history_list">
+                                    <li>
+                                        <em class="year">2019.9</em>
+                                        <p>KONET EXPRESS 베트남 10주년</p>
+                                    </li>
+                                    <li>
+                                        <em class="year">2019.4</em>
+                                        <p>KONET EXPRESS KOREA CO.,LTD 설립</p>
+                                    </li>
+                                    <li>
+                                        <em class="year">2012.10</em>
+                                        <p>KONET EXPRESS 호치민 지점 설립</p>
+                                    </li>
+                                    <li>
+                                        <em class="year">2009.10</em>
+                                        <p>KONET EXPRESS<br class="mo" /> 하이퐁 지점 설립</p>
+                                    </li>
+                                    <li>
+                                        <em class="year">2009.9</em>
+                                        <p>KONET EXPRESS CO.,LTD. 베트남 하노이 창립</p>
+                                    </li>
+                                </ul>
+                                <div class="history_line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->

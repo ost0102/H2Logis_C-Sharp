@@ -1,0 +1,297 @@
+﻿@{
+    ViewBag.Title = "CargoTracking";
+
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Container {
+    <div class="container">
+        <div class="sub_visual" id="Schedule">
+            <div class="inner">
+                <h4 class="subtitle" id="Booking_Title">TRACK & TRACE</h4>
+            </div>
+        </div>
+        <div class="sub_cover track_trace" id="SubCover">
+            <div class="search_zone layout2 tracking_page" id="tracking_page">
+                <div class="inner">
+                    <div class="col">
+                        <em class="label cr1">B/L No :</em>
+                        <div class="int_box cr1">
+                            <input type="text" name="" value="" placeholder="" id="S_HBL_NO" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <em class="label cr2">CNTR No :</em>
+                        <div class="int_box cr2">
+                            <input type="text" name="" value="" placeholder="" id="S_CNTR_NO" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btns type7 icn_search" id="btnSearch" onclick="fnMovePage('tracking_page')"><span class="icn_search"></span></button>
+                </div>
+            </div>
+            <!-- //search_zone -->
+            <!-- tracking_area -->
+            <div class="tracking_area tracking_page">
+                <!-- 배경지도 영역 추가하기-->
+
+                    <div class="tracking-inner">
+                        <div id="map" class="map"></div>
+                    </div>
+                    <div class="tracking-list">
+                        @*<div class="list-search">
+                            <input type="text" id="Mo_Input_Tracking2" name="" value="" placeholder="Search">
+                            <button type="button" class="btn_search" id="map_btn_Tracking"><span class="blind">검색</span></button>
+                        </div>*@
+                        <div class="list-result">
+                            <div class="result-area">
+                                <div class="tracking-type">
+                                    <div class="type-title">
+                                        <div class="bl-no">
+                                            <img src="~/Images/checked.png" /><span class="bl-title">Master B/L No.</span>
+                                        </div>
+                                        <div class="cntr-no">
+                                            <img src="~/Images/checked.png" /><span class="cntr-title">Container No.</span>
+                                        </div>
+                                        <div class="location">
+                                            <img src="~/Images/checked.png" /><span class="location-title">Last location.</span>
+                                        </div>
+                                    </div>
+                                    <div class="type-searched">
+                                        <div class="bl-searched">MBLSAMPLE123</div>
+                                        <div class="cntr-searched">CNTRSAMPLE123</div>
+                                        <div class="location-searched">입항</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tracking-table">
+                                <div class="table-1">
+                                    <div class="vertical-line"></div>
+                                    <p class="table-title">공컨반출</p>
+                                    <div class="graph">
+                                        <div class="graph-info">
+                                            <div class="location-info">
+                                                <p class="g-location-title">Location</p>
+                                                <p class="g-location-info">INCHEON, KOREA</p>
+                                            </div>
+                                            <div class="date-info">
+                                                <p class="g-date-title">Date and Time</p>
+                                                <p class="g-date-info">2023.03.07 09:12</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-1">
+                                    <div class="vertical-line"></div>
+                                    <p class="table-title">반입</p>
+                                    <div class="graph">
+                                        <div class="graph-info">
+                                            <div class="location-info">
+                                                <p class="g-location-title">Location</p>
+                                                <p class="g-location-info">INCHEON, KOREA</p>
+                                            </div>
+                                            <div class="date-info">
+                                                <p class="g-date-title">Date and Time</p>
+                                                <p class="g-date-info">2023.03.07 13:52</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-1">
+                                    <div class="vertical-line"></div>
+                                    <p class="table-title">선적</p>
+                                    <div class="graph">
+                                        <div class="graph-info">
+                                            <div class="location-info">
+                                                <p class="g-location-title">Location</p>
+                                                <p class="g-location-info">INCHEON, KOREA</p>
+                                            </div>
+                                            <div class="date-info">
+                                                <p class="g-date-title">Date and Time</p>
+                                                <p class="g-date-info orange">2023.03.07 21:15</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-1">
+                                    <div class="vertical-line"></div>
+                                    <p class="table-title">출항</p>
+                                    <div class="graph">
+                                        <div class="graph-info">
+                                            <div class="location-info">
+                                                <p class="g-location-title">Location</p>
+                                                <p class="g-location-info">INCHEON, KOREA</p>
+                                            </div>
+                                            <div class="date-info">
+                                                <p class="g-date-title">Date and Time</p>
+                                                <p class="g-date-info red">2023.03.08 02:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-1 last-sec">
+                                    <p class="table-title last">입항</p>
+                                    <div class="graph">
+                                        <div class="graph-info">
+                                            <div class="location-info">
+                                                <p class="g-location-title">Location</p>
+                                                <p class="g-location-info">INCHEON, KOREA</p>
+                                            </div>
+                                            <div class="date-info">
+                                                <p class="g-date-title">Date and Time</p>
+                                                <p class="g-date-info">2023.03.13 08:00</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="mobile-map">
+                        <div class="tracking-inner">
+                            <div id="map" class="map"></div>
+                        </div>
+                        <div class="tracking-list">
+                            <div class="list-search">
+                                <input type="text" id="Mo_Input_Tracking2" name="" value="" placeholder="Search">
+                                <button type="button" class="btn_search" id="map_btn_Tracking"><span class="blind">검색</span></button>
+                            </div>
+                            <div class="list-result">
+                                <div class="result-area">
+                                    <div class="tracking-type">
+                                        <div class="type-title">
+                                            <div class="bl-no">
+                                                <img src="~/Images/checked.png" /><span class="bl-title">Master B/L No.</span>
+                                            </div>
+                                            <div class="cntr-no">
+                                                <img src="~/Images/checked.png" /><span class="cntr-title">Container No.</span>
+                                            </div>
+                                            <div class="location">
+                                                <img src="~/Images/checked.png" /><span class="location-title">Last location.</span>
+                                            </div>
+                                        </div>
+                                        <div class="type-searched">
+                                            <div class="bl-searched">MBLSAMPLE123</div>
+                                            <div class="cntr-searched">CNTRSAMPLE123</div>
+                                            <div class="location-searched">입항</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tracking-table">
+                                    <div class="table-1">
+                                        <div class="vertical-line"></div>
+                                        <p class="table-title">공컨반출</p>
+                                        <div class="graph">
+                                            <img src="~/Images/icn_tracking1.png" />
+                                            <div class="graph-info">
+                                                <div class="location-info">
+                                                    <p class="g-location-title">Location</p>
+                                                    <p class="g-location-info">INCHEON, KOREA</p>
+                                                </div>
+                                                <div class="date-info">
+                                                    <p class="g-date-title">Date and Time</p>
+                                                    <p class="g-date-info">2023.03.07 09:12</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-1">
+                                        <div class="vertical-line"></div>
+                                        <p class="table-title">반입</p>
+                                        <div class="graph">
+                                            <img src="~/Images/icn_tracking2.png" />
+                                            <div class="graph-info">
+                                                <div class="location-info">
+                                                    <p class="g-location-title">Location</p>
+                                                    <p class="g-location-info">INCHEON, KOREA</p>
+                                                </div>
+                                                <div class="date-info">
+                                                    <p class="g-date-title">Date and Time</p>
+                                                    <p class="g-date-info">2023.03.07 13:52</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-1">
+                                        <div class="vertical-line"></div>
+                                        <p class="table-title">선적</p>
+                                        <div class="graph">
+                                            <img src="~/Images/icn_tracking3.png" />
+                                            <div class="graph-info">
+                                                <div class="location-info">
+                                                    <p class="g-location-title">Location</p>
+                                                    <p class="g-location-info">INCHEON, KOREA</p>
+                                                </div>
+                                                <div class="date-info">
+                                                    <p class="g-date-title">Date and Time</p>
+                                                    <p class="g-date-info orange">2023.03.07 21:15</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-1">
+                                        <div class="vertical-line"></div>
+                                        <p class="table-title">출항</p>
+                                        <div class="graph">
+                                            <img src="~/Images/icn_tracking4.png" />
+                                            <div class="graph-info">
+                                                <div class="location-info">
+                                                    <p class="g-location-title">Location</p>
+                                                    <p class="g-location-info">INCHEON, KOREA</p>
+                                                </div>
+                                                <div class="date-info">
+                                                    <p class="g-date-title">Date and Time</p>
+                                                    <p class="g-date-info red">2023.03.08 02:00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-1 last-sec">
+                                        <p class="table-title last">입항</p>
+                                        <div class="graph">
+                                            <img src="~/Images/icn_tracking5.png" />
+                                            <div class="graph-info">
+                                                <div class="location-info">
+                                                    <p class="g-location-title">Location</p>
+                                                    <p class="g-location-info">INCHEON, KOREA</p>
+                                                </div>
+                                                <div class="date-info">
+                                                    <p class="g-date-title">Date and Time</p>
+                                                    <p class="g-date-info">2023.03.13 08:00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                <!-- delivery_status -->
+                <div class="delivery_status" style="display:none;">
+                    <div class="top_box">
+                        <button type="button" class="btn_close">CLOSE</button>
+                        <!-- cargo_info -->
+                        <div class="cargo_info">
+                            <div class="col">
+                                <em class="tit">Master B/L No :</em>
+                                <p id="MBL_NO"></p>
+                            </div>
+                            <div class="col">
+                                <em class="tit">House B/L No :</em>
+                                <p id="HBL_NO"></p>
+                            </div>
+                        </div>
+                        <!-- //cargo_info -->
+                    </div>
+                    <div class="shipping_step">
+                        <div class="scrollbar-outer">
+                            <ul id="TrackList">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- //delivery_status -->
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/Scripts/js/Tracking/Tracking.js")
+}

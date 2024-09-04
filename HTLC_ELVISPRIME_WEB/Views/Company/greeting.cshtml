@@ -1,0 +1,207 @@
+﻿@{
+    ViewBag.Title = "company";
+    ViewBag.Sub = "greeting";
+
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Container {
+        <script>
+            $('html').css('scroll-behavior', 'smooth');
+        </script>
+        <div class="sub_visual1" id="@ViewBag.Title">
+            <div class="sub_visual-title">
+                <div class="greeting-main-title">
+                    <p>Happy 2morrow,</p>
+                    <p>Human & Logistics</p>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="history">
+            <!-- contents -->
+            <div class="contents greeting active" >
+                <!-- greeting_w -->
+                <div class="greeting_w">
+                    <div class="greeting_content_area">
+                        <p>History<p>
+                            <strong class="point">It is H2 logistics that provides the best transportation service and<br />world-class logistics with a leading logistics network.</strong>
+                        <p>선도적인 물류 네트워크를 갖춘 세계적인 물류, 최상의 운송서비스를 제공하는 H2 로지스틱스입니다.</p>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="history type1">
+                        <div class="com-container">
+                            <div class="history_line" id="his-list">
+                                <div class="history_side right">
+                                    <p class="year">2019.11</p>
+                                    <p class="kor">Registered U.S. FMC BOND</p>
+                                    <p class="eng">FMC 가입</p>
+                                </div>
+                                <div class="history_side left">
+                                    <p class="year">2019.07</p>
+                                    <p class="kor">Joined the Korea International Freight Forwarders Association</p>
+                                    <p class="eng">한국국제물류협회 가입</p>
+                                </div>
+                                <div class="history_side right">
+                                    <p class="year">2017.01</p>
+                                    <div class="part">
+                                        <p class="kor">obtain Authorized Economic Operator (AEO) Certification</p>
+                                        <p class="eng">AEO 취득[수출입안전관리우수공인업체 인증]</p>
+                                    </div>
+                                    <div class="part">
+                                        <p class="kor">Expansion of sea and air import operations</p>
+                                        <p class="eng">해상, 항공 수입 업무 확장</p>
+                                    </div>
+                                    <div class="part">
+                                        <p class="kor">Provision of warehouse services. delivery services</p>
+                                        <p class="eng">창고 서비스 제공, 운송 서비스 제공</p>
+                                    </div>
+                                </div>
+                                <div class="history_side left">
+                                    <p class="year">2015.01</p>
+                                    <p class="kor">Extend Services with Special Cargo Handling</p>
+                                    <p class="eng">Special Cargo 취급으로 서비스 확장</p>
+                                </div>
+                                <div class="history_side right">
+                                    <p class="year">2013.09</p>
+                                    <p class="kor">Acquired Quality Mangement System ISO 9001:2008 certificate</p>
+                                    <p class="eng">ISO 9001 인증</p>
+                                </div>
+                                <div class="history_side right">
+                                    <p class="year">2011.06</p>
+                                    <p class="kor">ORGANIZED EXPERT SERVICE TEAM ; E-DOCUMENT SERVICE</p>
+                                    <p class="eng">EXPERT SERVICE TEAM 조직</p>
+                                </div>
+                                <div class="history_side left">
+                                    <p class="year">2011.04</p>
+                                    <p class="kor">Established H2 Logistics Co.,Ltd.</p>
+                                    <p class="eng">H2 설립</p>
+                                </div>
+                                <img src="~/Images/img_history01.png" class="img_bg type1">
+                                <img src="~/Images/img_history02.png" class="img_bg type2">
+                                <img src="~/Images/img_history03.png" class="img_bg type3">
+                                <img src="~/Images/img_history04.png" class="img_bg type4">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //greeting_w -->
+
+            </div>
+
+        </div>
+
+        <section class="section greeting" id="business">
+
+            <h3>Business</h3>
+            <div class="business-table">
+                <div class="business-table-top">
+                    <div class="top-table">
+                        <div class="table-container">
+                            <h3>CONTAINER SERVICE</h3>
+                            <h4>컨테이너 서비스</h4>
+                            <div class="s_title_area">
+                                <p class="s_title">Door to Door</p>
+                                <p class="s_cont_title">수출입 Door to Door 서비스</p>
+                                <p class="s_title">TRIANGLE TRANSPORTATION</p>
+                                <p class="s_cont_title">삼국간 서비스</p>
+                                <p class="s_title">SPECIALIZED DG CARGO</p>
+                                <p class="s_cont_title">위험물 특화 서비스</p>
+                            </div>
+                        </div>
+                        <div class="table-air">
+                            <h3>AIR CARGO SERVICE</h3>
+                            <h4>항공 서비스</h4>
+                            <div class="s_title_area">
+                                <p class="s_title">Door to Door</p>
+                                <p class="s_cont_title">수출입 Door to Door 서비스</p>
+                                <p class="s_title">TRIANGLE TRANSPORTATION</p>
+                                <p class="s_cont_title">삼국간 서비스</p>
+                                <p class="s_title">DG CARGO</p>
+                                <p class="s_cont_title">위험물 서비스</p>
+                            </div>
+                        </div>
+                        <div class="table-iso">
+                            <h3>ISO TANK SERVICE</h3>
+                            <h4>ISO 탱크 서비스</h4>
+                            <div class="s_title_area">
+                                <p class="s_title">Door to Door</p>
+                                <p class="s_cont_title">수출입 Door to Door 서비스</p>
+                                <p class="s_title">CONSIGNMENT OPERATION SERCIVES FROM ISO TANKER</p>
+                                <p class="s_cont_title">탱크사 보유탱크 위탁 운영 서비스</p>
+                                <p class="s_title">PROVIDING A SEAMLESS SERVICE WITH LOCAL DEPOT</p>
+                                <p class="s_cont_title">국내 depot 협업으로 원활한 서비스 제공</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="business-table-bottom">
+                    <div class="bottom-table">
+                        <div class="table-project">
+                            <h3>PROJECT CARGO SERVICE</h3>
+                            <h4>프로젝트 서비스</h4>
+                            <div class="s_title_area">
+                                <p class="s_title">CONSULTING</p>
+                                <p class="s_cont_title">프로젝트 컨설팅</p>
+                                <p class="s_title">A LONG-TERM PROJECT</p>
+                                <p class="s_cont_title">장기프로젝트 수행</p>
+                                <p class="s_title">LOCAL DUTY-FREE CUMSTOMS CLEARANCE</p>
+                                <p class="s_cont_title">Local 면세통관</p>
+                            </div>
+                        </div>
+                        <div class="table-etc">
+                            <h3>OTHER SERVICE</h3>
+                            <h4>기타서비스</h4>
+                            <div class="s_title_area">
+                                <p class="s_title">CUSTOMES CLEARANCE , CARGO INSURANCE</p>
+                                <p class="s_cont_title">통관, 보험</p>
+                                <p class="s_title">UNLOADING , STORAGE , (DE)VANNING & STUFFING AT CFS</p>
+                                <p class="s_cont_title">하역, 보관, CFS 작업</p>
+                                <p class="s_title">DOMESTIC TRUCKING</p>
+                                <p class="s_cont_title">내륙운송</p>
+                            </div>
+                        </div>
+                        <div class="table-system">
+                            <h3>DISTRIBUTION INTERGRATED MANAGEMENT SYSTEM</h3>
+                            <h4>물류 통합관리 시스템</h4>
+                            <div class="s_title_area">
+                                <p class="s_title">E-DOCUMENT SERVICE (C/I,P/L,C/O ETC.)</p>
+                                <p class="s_cont_title">전자 선적 서류(CI, PL, C/O 등) 지원 서비스</p>
+                                <p class="s_title">PROFESSIONAL/FOCUSED CARE SERVICES WITH DEDICATED EXPERTS TEAM</p>
+                                <p class="s_cont_title">Expert Service 전담 팀을 통한 전문성/집중 care 서비스</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section greeting" id="location">
+            <h3>Location</h3>
+            <div class="location pc">
+                <div class="addr-title">
+                    <img src="~/Images/img_address.png" />&nbsp;&nbsp;<span class="addr-txt">Address.</span>
+                    <p class="addr-detail_eng">1301 CENTUM DREAMWORLD, 25, CENTUM 2-RO, HAEUNDAE-GU, BUSAN,48060, KOREA</p>
+                    <p class="addr-detail_kor">부산광역시 해운대구 센텀2로 25 센텀드림월드 1301호</p>
+                </div>
+                <div class="tel-title">
+                    <img src="~/Images/img_tel.png" />&nbsp;&nbsp;<span class="tel-txt">Tel.</span>
+                    <p class="tel-detail">+82-51-744-9155</p>
+                </div>
+            </div>
+            <div class="location mo">
+                <div class="addr-title">
+                    <img src="~/Images/img_address.png" />&nbsp;&nbsp;<span class="addr-txt">Address.</span>
+                    <p class="addr-detail_eng">1301 CENTUM DREAMWORLD, 25, CENTUM 2-RO, HAEUNDAE-GU, BUSAN,48060, KOREA<br />
+                    <p class="addr-detail_kor">부산광역시 해운대구 센텀2로 25 센텀드림월드 1301호</p>
+                </div>
+                <div class="tel-title">
+                    <img src="~/Images/img_tel.png" />&nbsp;&nbsp;<span class="tel-txt">Tel.</span>
+                    <p class="tel-detail">+82-51-744-9155</p>
+                </div>
+            </div>
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.5858001211113!2d129.1307981155876!3d35.16694936561097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356892c77aeb321b%3A0xe5323bff98bd0fe4!2zKOyjvCnsl5DsnbTsuZjtiKzroZzsp4DsiqTti7HsiqQ!5e0!3m2!1sko!2skr!4v1679477395375!5m2!1sko!2skr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    }
+

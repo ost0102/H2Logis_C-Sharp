@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section Container {
+        <script>
+            $('html').css('scroll-behavior', 'smooth');
+        </script>
+        <!-- swiper 색깔 커스텀 -->
+        <style>
+            .swiper-pagination-bullet {
+                opacity: 1;
+                background: #fff;
+            }
+
+            .swiper-pagination-bullet-active {
+                color: #fff;
+                background: #009954;
+            }
+        </style>
+
+        <section class="section visual">
+            <!-- visual slide -->
+
+            <div class="visual_slide">
+                <div class="item">
+                    <div class="inner">
+                        <div class="mask"><div class="bg"></div></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="inner">
+                        <div class="mask"><div class="bg"></div></div>
+                        <div class="txt_w">                            
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="inner">
+                        <div class="mask"><div class="bg"></div></div>                       
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="inner">
+                        <div class="mask"><div class="bg"></div></div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="inner">
+                        <div class="mask"><div class="bg"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="search_main_area">
+                <div class="txt_w">
+                    <p class="txt01">
+                        <span>Happy 2morrow,</span><br />
+                        <span>Human & Logistics</span><br />
+                        <div class="search_main">
+                            <input type="text" id="Pc_Input_Main_Tracking" name="" value="" placeholder="B/L No, Container No">
+                            <span class="focus-border"></span>
+                            <button type="button" class="btn_search_main" id="Pc_Main_Tracking"><span class="blind">검색</span></button>
+                            <button type="button" class="mo_btn_search_main" id="Mo_Main_Tracking"><span class="blind">검색</span></button>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <a href="#notice">
+                <div class="scrollDown">
+                    <p>SCROLL DOWN</p>
+                </div>
+            </a>
+            <div class="notice" id="notice">
+                <div class="notice-title">
+                    <h1 class="title">Notice</h1>
+                    <p class="sub-title">공지사항</p>
+                </div>
+                <ul class="notice_list" id="notice_list">
+                </ul>
+                <div class="no_data" id="Notice_NoData" style="display:none">@*<span><strong>자료가 없습니다.</strong></span>*@</div>
+                <div class="base_paging">
+                    <div class="paging_in" id="notice_paging_list">
+                        <a href="#" onclick="goPage(1)" class="page first">
+                            <span class="blind">처음페이지로 가기</span>
+                        </a>
+                        <a href="#" onclick="goPage(1)" class="page prev">
+                            <span class="blind">이전페이지로 가기</span>
+                        </a>
+                        <span class="number"><span class="on">1</span></span>
+                        <a href="#" onclick="goPage(1)" class="page next">
+                            <span class="blind">다음페이지로 가기</span>
+                        </a>
+                        <a href="#" onclick="goPage(1)" class="page last">
+                            <span class="blind">마지막페이지로 가기</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- visual slide -->
+            <!-- quick_menu -->
+            <!-- quick_menu -->
+        </section>
+        <!-- //visual -->
+    <script src="~/Scripts/API/swiper.min.js"></script>
+    <script src="~/Scripts/js/Home/Index.js"></script>
+    @Scripts.Render("~/Scripts/Notice.js")
+    @Scripts.Render("~/Scripts/API/jquery.slimscroll.min.js")
+}
